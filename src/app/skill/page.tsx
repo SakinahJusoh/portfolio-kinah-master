@@ -1,0 +1,97 @@
+import React  from "react";
+import { Copyright } from "lucide-react"; 
+import MenuBar from "@/app/components/menu";
+import type {JSX} from "react";
+
+
+    // Skills data
+    const skills = [
+        {
+            number: "1",
+            title: "PROGRAMMING & DEVELOPMENT",
+            description: "Java, HTML, CSS, JavaScript, React.js, Next.js, Flutter, Tailwind"
+        },
+        {
+            number: "2",
+            title: "DESIGN & CREATIVE TOOLS",
+            description: "Adobe Photoshop, Canva, Figma, Capcut"
+        },
+        {
+            number: "3",
+            title: "COMMUNICATION",
+            description: ""
+        },
+        {
+            number: "4",
+            title: "TEAMWORK & COLLABORATION",
+            description: ""
+        },
+        {
+            number: "5",
+            title: "ADAPTABLE & FLEXIBLE",
+            description: ""
+        },
+    ];
+
+    export default function Skills(): JSX.Element {
+        return (
+            <div className="bg-white flex flex-col items-center w-full min-h-screen">
+                <div className=" w-full max-w-[1430px] relative py-6">
+
+                    <MenuBar />
+
+
+                {/* Vertical Sakinah text */}
+                <div className="hidden lg:block absolute h-[168px] top-[80px] left-[20px] -rotate-90 [font-family: 'Aoboshi_One-Regular', Helvetica] font-normal text-[#ff009d] text-2xl xl:text-4xl">
+                    SAKINAH
+                </div>
+
+                {/* Vertical Line */}
+                <div className="w-px h-[1500px] top-0 left-[50px] absolute bg-black"/>
+
+                {/* Horizontal line */}
+                <div className="w-[1500px] h-px top-15 left-0 absolute bg-black"/>
+
+                {/* Skills heading */}
+                <div className="text-center text-[#ff009d] text-4xl sm:text-5xl md:text-6xl font-normal tracking-[10px] [font-family:'Aoboshi_One-Regular',Helvetica]">
+                    SKILLS
+                </div>
+
+                {/* Skills list */}
+                <div className="flex flex-col gap-16">
+                {skills.map((skill, index) => (
+                    <div 
+                    key={index}
+                    className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
+                    >
+                    <div className="mt-8 ml-30 text-black text-[80px] sm:text-[100px] font-normal [font-family:'Annie_Use_Your_Telescope-Regular',Helvetica] leading-[200px]">
+                        {skill.number}
+                    </div>
+                    <div className="flex flex-col mt-8 ml-12">
+                        <h2 className="text-black text-2xl sm:text-3xl md:text-4xl font-bold [font-family:'Inter-Bold', Helvetica]">
+                            {skill.title}
+                        </h2>
+                        
+                        {skill.description && (
+                            <p className="text-black text-lg sm:text-xl md:text-2xl font-medium mt-2 [font-family:'Inter-Medium',Helvetica]">
+                                {skill.description}
+                            </p>
+                        )}
+                    </div>
+                   
+                </div>
+                 ))}
+                 </div>
+                 </div>
+
+                  {/* Footer */}
+                    <div className="mt-16 flex justify-center items-center">
+                        <div className="flex items-center gap-2 text-sm md:text-lg [font-family: 'Inter-SemiBold',Helvetica] font-semibold text-black text-2xl text-center">
+                            <span>2025 by Sakinah</span>
+                            <Copyright className="w-6 h-6" />
+                        </div>
+                    </div>
+                </div>
+                
+        )
+    }
