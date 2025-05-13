@@ -13,7 +13,7 @@ const MenuBar = () => {
 
     return (
         <div className="w-full justify-end mb-12">
-            <div className="absolute right-0 top-[45px]">
+            <div className=" absolute right-0 top-[45px]">
                 <Link 
                     href="/about"
                     className={`[font family: 'Inter-Medium', Helvetica] font medium text-black text-xl px-2 py-2 ${pathName == "/about" ? 'active font-bold' : ''}`}>

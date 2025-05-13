@@ -1,10 +1,14 @@
 import {Copyright, SeparatorHorizontal} from "lucide-react";
+
+
 import React from "react";
 import type {JSX} from "react";
 import MenuBar from "@/components/menu";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "@/components/footer";
+import { create } from "domain";
+import { createClient } from "../../../utils/supabase/client";
 
     // Personal  information
    const personalInfo = [     
@@ -86,11 +90,20 @@ export const metadata: Metadata = {
 };
 
 
-export default function AboutMe(): JSX.Element {
+export default async function AboutMe() {
+
+    const supabase = await createClient();
+    const { data: about } = await supabase.from("about me").select(); 
+    const { data: skill } = await supabase.from("skills").select(); 
+    const { data: personal } = await supabase.from("personal").select();
+    const { data: contact } = await supabase.from("contact").select();
+    console.log(about, skill, personal, contact);
+    
+
     return (
         <div className="bg-white flex flex-col items-center w-full min-h-screen">
             <div className="w-full max-w-[1430px] relative py-6">
-
+ 
                 <MenuBar />
 
                 {/* Vertical Sakinah text */}
