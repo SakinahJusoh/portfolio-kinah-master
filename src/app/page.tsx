@@ -1,6 +1,6 @@
 
 import React from "react";
-import type {JSX} from "react";
+import type { JSX } from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -32,14 +32,13 @@ export default function FrontPage(): JSX.Element {
   ];
 
   return (
-    <div className="bg-white flex flex-col items-center min-h-screen px-4 py-6">
-
+    <div className="bg-white flex flex-col items-center min-h-screen px-4 py-8 sm:py-12">
         {/* Portfolio Images Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-[1440px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-[1440px]">
           {portfolioImages.map((image, index) => (
             <img
               key={index}
-              className={"w-full h-60 md:h-[400px] object-cover rounded-lg bg-gray-200"}
+              className={"w-full h-52 sm:h-60 md:h-72 lg:h-96 object-cover rounded-lg bg-gray-200 "}
               alt={image.alt}
               src={image.src}
               />
@@ -47,16 +46,16 @@ export default function FrontPage(): JSX.Element {
         </div>
 
         {/* Portfolio Title Section */}
-        <div className="flex flex-col items-center text-center mt-12">
-          <div className="font-[Aoboshi_One-Regular] text-5xl md:text-7xl text-[#ff009d] tracking-wider ">
+        <div className="text-center mt-12">
+          <div className="font-[Aoboshi_One-Regular] text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#ff009d] tracking-wide ">
             SAKINAH
           </div>
         </div>
 
-        <div className="flex justify-center">
+        <div className="mt-6">
           <Link href="/about">
           <button
-            className="w-[100px] h-[50px] rounded-[30px] bg-[#ff009d] mt-4 flex items-center justify-center active:bg-black transition-colors">
+            className="px-6 py-3 rounded-full bg-[#ff009d] text-white text-lg sm:text-xl font-medium hover:bg-black transition-colors duration-300">
             <span 
               className="text-xl text-white font-medium "
               style={{ fontFamily: "'League Spartan-Medium', Helvetica"}}
