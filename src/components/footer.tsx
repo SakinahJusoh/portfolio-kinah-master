@@ -1,6 +1,5 @@
 import React from "react";
 import { Instagram, Linkedin } from "lucide-react";
-import Link from "next/link";
 import { createClient } from "../../utils/supabase/server";
 
 interface Icontact {
