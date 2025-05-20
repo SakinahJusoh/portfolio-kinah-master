@@ -49,7 +49,7 @@ const Footer = async () => {
           SAKINAH JUSOH
         </div>
         <div className="flex flex-row gap-8">
-          {contacts?.map((contact: Icontact, index) => (
+          {contacts?.map((contact: Icontact, index: number) => (
             <div key={index} className="flex flex-row items-center gap-4">
               <img src={contact.icon} className="w-[30px] h-[30px]" />
               {contact.title === "Resume" && contact.description ? (
